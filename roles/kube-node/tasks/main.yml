@@ -14,6 +14,7 @@
   - bridge
   - host-local
   - loopback
+  - dos2unix
   tags: upgrade_k8s
 
 ##----------kubelet 配置部分--------------
