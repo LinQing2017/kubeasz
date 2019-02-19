@@ -19,7 +19,7 @@
   tags: upgrade_docker, download_docker
 
 - name: docker命令自动补全
-  template: src=docker dest=/etc/bash_completion.d/docker mode=0644
+  copy: src=docker dest=/etc/bash_completion.d/docker mode=0644
 
 - name: docker国内镜像加速
   template: src=daemon.json.j2 dest=/etc/docker/daemon.json
@@ -45,4 +45,4 @@
 ## 可选 ------安装docker查询镜像 tag的小工具----
 # 先要安装轻量JSON处理程序‘jq’，已在 prepare 节点安装
 - name: 下载 docker-tag
-  template: src=docker-tag dest={{ bin_dir }}/docker-tag mode=0755
+  copy: src=docker-tag dest={{ bin_dir }}/docker-tag mode=0755
